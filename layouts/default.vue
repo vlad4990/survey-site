@@ -1,6 +1,13 @@
 <template>
   <div>
-    <Nuxt />
+
+    <div class="layouts_navbar">
+      <v-sidebar/>
+      <div class="layouts_sidebar">
+        <v-navbar/>
+        <Nuxt />
+      </div>
+    </div>
   </div>
 </template>
 
@@ -31,32 +38,18 @@ html {
   margin: 0;
 }
 
-.button--green {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #3b8070;
-  color: #3b8070;
-  text-decoration: none;
-  padding: 10px 30px;
+.layouts_navbar{
+  display: flex;
 }
-
-.button--green:hover {
-  color: #fff;
-  background-color: #3b8070;
-}
-
-.button--grey {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #35495e;
-  color: #35495e;
-  text-decoration: none;
-  padding: 10px 30px;
-  margin-left: 15px;
-}
-
-.button--grey:hover {
-  color: #fff;
-  background-color: #35495e;
+.layouts_sidebar{
+  display: flex;
+  flex-direction: column;
 }
 </style>
+<script>
+import VNavbar from "../components/v-navbar";
+import VSidebar from "~/components/v-sidebar";
+export default {
+  components: {VSidebar, VNavbar}
+}
+</script>
